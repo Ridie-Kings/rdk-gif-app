@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 
 const AddCategory = ({ onNewCategory }) => {
 
-    console.log('>>> AddCategory render')
-
     const [inputValue, setInputValue] = useState('One piece')
 
     const onInputChange = ({ target }) => {
@@ -16,15 +14,15 @@ const AddCategory = ({ onNewCategory }) => {
 
         const newValue = inputValue.trim()
 
-        if (newValue.length < 1) return
+        if (newValue.length <= 1) return
 
-        onNewCategory(newValue);
         setInputValue('')
+        onNewCategory(newValue);
     }
 
 
     return (
-        <form onSubmit={onSubmit}>
+        <form aria-label='form' onSubmit={onSubmit}>
             <input
                 type="text"
                 placeholder="Buscar gifs"
