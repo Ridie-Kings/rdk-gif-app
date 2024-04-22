@@ -11,7 +11,7 @@ const GifGrid = ({ category }) => {
         <>
             <h3>{category}</h3>
             {
-                isLoading && <div className="loader"></div>
+                isLoading && <div className="loader" data-testid="loader"></div>
             }
             <div className='card-grid'>
                 {images.map((image) => (
